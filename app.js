@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocalMongoose = require('passport-local-mongoose');
-const port = 5000;
+let port = process.env.PORT;
 
 const app = express();
 
@@ -24,7 +24,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect('mongodb://localhost:27017/userDb', { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://liuka:%23FkbY3gQQR2RJ_8@cluster0.jdkvz.mongodb.net/userDb', { useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.set('useCreateIndex' , true);
 
 const userSchema = new mongoose.Schema ({
