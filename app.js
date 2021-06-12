@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocalMongoose = require('passport-local-mongoose');
-let port = process.env.PORT;
+
 
 const app = express();
 
@@ -106,6 +106,6 @@ app.post('/login', function(req, res) {
 
 });
 
-app.listen(port , function() {
-    console.log(`Server is runnning on port ${port}`);
+app.listen(process.env.PORT || 5000 , function() {
+    console.log("Server is active and running");
 });
