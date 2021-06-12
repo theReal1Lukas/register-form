@@ -1,0 +1,33 @@
+
+body{
+  background: linear-gradient(to right , #2980b9 ,#2c3e50);
+  color:#fff;
+}
+
+.centered {
+    margin-top:10vh;
+    text-align: center;
+    /* font-weight: 900; */
+}
+
+.register ,.login {
+  margin-top : 20vh;
+  text-align: left;
+}
+
+.secret-text {
+  text-align: center;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 300;
+  /* background-color: #000; */
+}
+
+.img-certificate {
+  width: 80%;
+ 
+}
+
+.row-certificate {
+  margin : 25px 0 25px 0;
+}
