@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocalMongoose = require('passport-local-mongoose');
-let port = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 
 const app = express();
@@ -68,9 +68,6 @@ app.get('/logout', function(req, res) {
     res.redirect('/');
 });
 
-app.get('/submit', function (req, res) {
-    res.render('submit');
-})
 
 app.post('/register', function(req, res){
 
@@ -94,10 +91,10 @@ app.post('/login', function(req, res) {
         password : req.body.password
     });
 
+
     req.login(user, function(err) {
         if(err) {
             console.log(err);
-            res.redirect('/failure');
         } else {
             passport.authenticate('local')(req, res, function () {
                 res.redirect('/secrets');
@@ -107,9 +104,7 @@ app.post('/login', function(req, res) {
 
 });
 
-if (port == null || port == "") {
-    port = 5000;
-  }
-  app.listen(port, function(){
-      console.log(`Server is running on ${port}`);
+
+  app.listen(PORT, function(){
+      console.log(`Server is running on ${PORT}`);
   });
