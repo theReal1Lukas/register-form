@@ -25,7 +25,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect('mongodb+srv://liuka:%23FkbY3gQQR2RJ_8@cluster0.jdkvz.mongodb.net/userDb', { useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.mongo_url, { useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.set('useCreateIndex' , true);
 
 const userSchema = new mongoose.Schema ({
